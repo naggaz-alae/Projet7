@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+stubs/*.pkl
+models/*.pt
+*.pt
+input_videos/*
+output_videos/*
+!input_videos/.gitkeep
+!output_videos/.gitkeep
+runs/
+datasets/
+.pytest_cache/

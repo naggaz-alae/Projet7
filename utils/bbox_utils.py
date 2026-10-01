@@ -1,0 +1,25 @@
+"""Fonctions géométriques élémentaires sur les bounding boxes (x1, y1, x2, y2)."""
+import math
+
+
+def get_center_of_bbox(bbox):
+    x1, y1, x2, y2 = bbox
+    return int((x1 + x2) / 2), int((y1 + y2) / 2)
+
+
+def get_bbox_width(bbox):
+    return bbox[2] - bbox[0]
+
+
+def get_foot_position(bbox):
+    """Point de contact au sol : milieu du bord inférieur de la box."""
+    x1, _, x2, y2 = bbox
+    return int((x1 + x2) / 2), int(y2)
+
+
+def measure_distance(p1, p2):
+    return math.hypot(p1[0] - p2[0], p1[1] - p2[1])
+
+
+def measure_xy_distance(p1, p2):
+    return p1[0] - p2[0], p1[1] - p2[1]
